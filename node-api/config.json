@@ -1,0 +1,4 @@
+﻿{
+    "connectionString": "mongodb+srv://deftsoft:deftsoft123@mongofirst-uyd7g.mongodb.net/gameinfo?retryWrites=true&w=majority",
+    "secret": "sdfdfdf312fdsfsdfdffsdfd12312vdfgfdg"
+}

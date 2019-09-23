@@ -1,0 +1,35 @@
+﻿<div class="col-md-6 offset-md-3 mt-5">
+    <div class="alert alert-info">
+        <strong>Normal User</strong> - U: user P: user<br />
+        <strong>Administrator</strong> - U: admin P: admin
+    </div>
+    <div class="card">
+        <div class="text-center mt-4">
+            <h4 class="card-header">Login Form</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="user_email">Email</label>
+                    <input type="text" formControlName="user_email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.user_email.errors }" />
+                    <div *ngIf="submitted && f.user_email.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_email.errors.required">Email is required</div>
+                        <div *ngIf="f.user_email.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div>            
